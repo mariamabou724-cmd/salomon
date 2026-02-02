@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💘</title>
+
+<style>
+body {
+  background: #f7c6d9;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  width: 320px;
+  height: 220px;
+  position: relative;
+}
+
+button {
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#Oui {
+  background: #ff4d6d;
+  color: white;
+}
+
+#non {
+  background: #ddd;
+  position: absolute;
+  left: 180px;
+  top: 140px;
+  transition: 0.15s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Veux tu être mon valentin Mr Salomon Koffi mon prince? 💖</h2>
+  <button id="Oui" onclick="alert('🥰🥰🥰')">Oui</button>
+  <button id="non">Non</button>
+</div>
+
+<script>
+const noBtn = document.getElementById("non");
+const card = document.querySelector(".card");
+
+noBtn.addEventListener("mouseenter", () => {
+  const cardRect = card.getBoundingClientRect();
+
+  const maxX = cardRect.width - noBtn.offsetWidth;
+  const maxY = cardRect.height - noBtn.offsetHeight;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+</script>
+
+</body>
+</html>
+
